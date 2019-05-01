@@ -62,6 +62,19 @@ class HttpConf extends ClientConf<HttpConf> {
   HttpConf(Properties config) {
     super(config);
 
+    for (HttpConf.Entry entry : Entry.values()) {
+      String configKey = entry.toString().toLowerCase().replaceAll("_", ".");
+      if (this.config.containsKey(configKey)) {
+           String configValue = this.config.get(configKey);
+           if (entry.dflt() instanceof Boolean) {
+              set(entry, Boolean.valueOf(configValue));
+          } else {
+              set(entry, configValue);
+          }
+          System.out.println(String.format("Setting: %s -> %s", entry, configValue));
+      }
+  }
+
     if (getBoolean(Entry.SPNEGO_ENABLED)) {
       if (get(Entry.AUTH_LOGIN_CONFIG ) == null) {
         throw new IllegalArgumentException(Entry.AUTH_LOGIN_CONFIG.key + " should not be null");

@@ -193,9 +193,9 @@
     <module>client-http</module>
     <module>core</module>
     <module>core/scala-2.11</module>
-    <module>coverage</module>
+    <!--<module>coverage</module>-->
     <module>examples</module>
-    <module>python-api</module>
+    <!--<module>python-api</module>-->
     <module>repl</module>
     <module>repl/scala-2.11</module>
     <module>rsc</module>
@@ -204,7 +204,7 @@
     <module>scala-api/scala-2.11</module>
     <module>server</module>
     <module>test-lib</module>
-    <module>integration-test</module>
+    <!--<module>integration-test</module>-->
   </modules>
 
   <dependencies>
@@ -797,9 +797,9 @@
             <requireMavenVersion>
               <version>[3.0.0,)</version>
             </requireMavenVersion>
-            <requireOS>
+            <!--<requireOS>
               <family>unix</family>
-            </requireOS>
+            </requireOS>-->
           </rules>
         </configuration>
         <executions>
@@ -849,7 +849,7 @@
             Copy the template scalastyle / checkstyle configuration and replace the copyright
             header.
           -->
-          <execution>
+          <!--<execution>
             <id>setup-style-checker</id>
             <phase>verify</phase>
             <goals>
@@ -871,7 +871,7 @@
                   value="${project.build.directory}/checkstyle.header" />
               </target>
             </configuration>
-          </execution>
+          </execution>-->
         </executions>
       </plugin>
 
@@ -900,7 +900,7 @@
         </executions>
       </plugin>
 
-      <plugin>
+      <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>2.17</version>
@@ -923,7 +923,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -969,7 +969,7 @@
         </executions>
       </plugin>
 
-      <plugin>
+<!--      <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <configuration>
@@ -983,7 +983,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
 
       <!-- Override this plugin with parent POM to add DISCLAIMER file to artifacts. -->
       <plugin>
